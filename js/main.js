@@ -4,6 +4,9 @@ canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 var ctx = canvas.getContext("2d");
 
+
+
+
 /*
   addEventListeners
 */
@@ -86,6 +89,9 @@ function Player(){
       this.dy = 0;
       this.hasJumped = false;
     }
+    ctx.font = '30px Arial';
+    ctx.fillText("X Position: " + this.x,100,50);
+    ctx.fillText("Y Position: " + this.y,100,100);
     this.draw();
   }
 }
@@ -99,6 +105,7 @@ var player = new Player();
 function animate(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   player.update();
+
 }
 
 //run game loop
