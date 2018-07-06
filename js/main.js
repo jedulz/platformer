@@ -89,9 +89,8 @@ function Player(){
       this.dy = 0;
       this.hasJumped = false;
     }
-    ctx.font = '30px Arial';
-    ctx.fillText("X Position: " + this.x,100,50);
-    ctx.fillText("Y Position: " + this.y,100,100);
+    ctx.fillText("X Position: " + Math.round(this.x*10)/10,100,50);
+    ctx.fillText("Y Position: " + Math.round(this.y*10)/10,100,100);
     this.draw();
   }
 }
@@ -105,6 +104,7 @@ var player = new Player();
 function animate(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   player.update();
+  ctx.font = '30px Arial';
 
 }
 
